@@ -1,0 +1,17 @@
+
+> web3-checkout-demo@0.1.0 demo
+> forge build --quiet && npm --prefix client run demo
+
+
+> web3-checkout-demo-client@0.1.0 demo
+> tsx src/demo.ts
+
+local anvil node at http://127.0.0.1:8546 (chain 31337, throwaway dev keys, no network)
+Checkout deployed at 0x5fbdb2315678afecb367f032d93f642f64180aa3, merchant 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+merchant created order-1001 for 0.25 ETH
+buyer connected: 0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+wrong amount refused client-side: [WRONG_AMOUNT] order price is 250000000000000000 wei, tried to pay 249999999999999999
+buyer paid, tx 0x29add701baa926b07ef2d79c524a7dc4cf1c073023e8c49d0ad1226b3778bdf2
+second payment refused: [ORDER_NOT_PAYABLE]
+merchant released order, withdrawable 0.25 ETH
+merchant withdrew. Done: pay -> release -> withdraw on a local chain.

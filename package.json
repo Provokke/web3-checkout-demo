@@ -1,0 +1,14 @@
+{
+  "name": "web3-checkout-demo",
+  "version": "0.1.0",
+  "description": "Unaudited ETH checkout escrow (Solidity, Foundry) with a small TypeScript wallet-connect and pay client, demoed on a local anvil node.",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build:contract": "forge build",
+    "test:contract": "forge test",
+    "test:client": "npm --prefix client test",
+    "demo": "forge build --quiet && npm --prefix client run demo",
+    "check": "forge fmt --check && forge test && npm --prefix client run check"
+  }
+}
