@@ -1,17 +1,43 @@
 {
-  "name": "web3-checkout-demo-client",
+  "name": "@provokke/web3-checkout-client",
   "version": "0.1.0",
   "description": "Small TypeScript client for the Checkout escrow: wallet connect (EIP-1193) and pay flow, demoed against a local anvil node.",
   "license": "MIT",
-  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Provokke/web3-checkout-demo.git",
+    "directory": "client"
+  },
+  "author": "Provokke <josh@provokke.com>",
+  "files": [
+    "dist",
+    "!dist/demo.*",
+    "!dist/anvil.*"
+  ],
+  "main": "./dist/pay.js",
+  "types": "./dist/pay.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/pay.d.ts",
+      "default": "./dist/pay.js"
+    }
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "public"
+  },
   "type": "module",
-  "engines": { "node": ">=20" },
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
+    "build": "tsc -p tsconfig.build.json",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "test": "vitest run",
     "demo": "tsx src/demo.ts",
-    "check": "npm run typecheck && npm run lint && npm test"
+    "check": "npm run typecheck && npm run lint && npm test",
+    "prepack": "npm run build"
   },
   "dependencies": {
     "viem": "^2.21.0"
